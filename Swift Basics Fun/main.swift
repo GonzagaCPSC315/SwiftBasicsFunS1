@@ -37,3 +37,48 @@ let firstName = "gina"
 let lastName = "sprint"
 let numChars = firstName.count + lastName.count
 print("\(firstName) \(lastName) has \(numChars) characters")
+
+// MARK: - Arrays
+var quarantineWords: [String] = ["home", "sleep", "netflix"]
+print(quarantineWords)
+print(quarantineWords.count)
+print(quarantineWords.isEmpty)
+// 0 based indexing
+print(quarantineWords[0])
+// can grow or shrink in size
+quarantineWords.append("pajamas")
+print(quarantineWords)
+// task 2: remove the first element in the array
+quarantineWords.remove(at: 0)
+print(quarantineWords)
+
+// MARK: - Random Numbers
+// lets throw a 6-sided die
+let randNum = arc4random_uniform(6) + 1
+print(randNum)
+// type cast
+let randNumInt = Int(randNum)
+
+// MARK: - Conditionals
+// Swift has a C-style if/else if/else structure
+// Swift has Swifty style switch structure (cover later)
+var x = 100
+if x >= 100 {
+    print("x is large")
+}
+else {
+    print("x is not large")
+}
+
+// MARK: - Loops
+// 3 loops
+// C style while, C style repeat-while (do-while), Swifty for in
+// no C style for loop: for (int i = 0; i < 10; i++)
+for i in 0..<10 {
+    print(i, terminator: ", ")
+}
+print()
+
+// task 3: solve this problem using each of the three loops
+// print the first 20 even numbers
+// 2, 4, 6, ... , 40
