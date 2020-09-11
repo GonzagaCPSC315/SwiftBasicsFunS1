@@ -132,21 +132,21 @@ if myOptionalInt != nil {
     myInt = myOptionalInt!
 }
 
-//var friends = ["Chandler", "Monica", "Ross", "Rachel"]
-//print(friends)
-//print(friends.count)
-//friends.insert("Phoebe", at: 1)
-//print(friends)
-//print("Please enter a friend: ", terminator: "")
-//let inputStringOptional = readLine()
-//if let inputString = inputStringOptional {
-//    print("trying to remove: " + inputString)
-//    let optionalIndex = friends.index(of: inputString)
-//    if let myIndex = optionalIndex {
-//        friends.remove(at: myIndex)
-//        print(friends)
-//    }
-//}
+var friends = ["Chandler", "Monica", "Ross", "Rachel"]
+print(friends)
+print(friends.count)
+friends.insert("Phoebe", at: 1)
+print(friends)
+print("Please enter a friend: ", terminator: "")
+let inputStringOptional = readLine()
+if let inputString = inputStringOptional {
+    print("trying to remove: " + inputString)
+    let optionalIndex = friends.firstIndex(of: inputString)
+    if let myIndex = optionalIndex {
+        friends.remove(at: myIndex)
+        print(friends)
+    }
+}
 
 // MARK: - Functions
 // no params, no return
