@@ -180,3 +180,53 @@ func computeCircleArea2(_ radius: Double) -> Double {
     return area
 }
 print(computeCircleArea2(5.0))
+
+// structs and enums object pass by value
+// Int, Double, Float, Array, String, etc.
+// classes object types pass by reference
+// to pass a value type (struct or enum) by reference use the inout keyword
+func increment(value: inout Int, by incrementAmount: Int) {
+    value += incrementAmount
+}
+var y = 5
+increment(value: &y, by: 100)
+print(y)
+
+// MARK: - Strings
+// a String a sequence of Characters
+// a Character is one or more Unicodes
+// over 143,000 unicodes
+// swift is fully unicode compliant
+var pig = "🐷" // ctrl + cmd + spacebar (character viewer)
+print(pig)
+var 🐷 = "pig pace"
+print(🐷)
+
+// concatenation +
+// relational operators < <= > >=
+// equality operators == !=
+// there are useful properties (count, isEmpty, ...) and methods (lowercased(), hasSuffix(), contains())
+// you cannot [0]
+// instead you have to use String.Index
+var course = "CPSC315"
+// we want to print the first C
+let indexOfFirstCharacter = course.startIndex // like 0
+print(course[indexOfFirstCharacter])
+// we want to print out the 3 at index [4]
+let indexOfTheFourthCharacter = course.index(course.startIndex, offsetBy: 4) // like 4
+print(course[indexOfTheFourthCharacter])
+
+// task 5: define/call a function that accepts two strings
+// and returns true if the strings have the same last character, false otherwise
+// ex: "gonzaga", "zebra", -> True
+// ex: "spokane", "gonzaga" -> False
+func hasSameLastCharacter(_ string1: String, _ string2: String) -> Bool {
+    // should check that each string has at least one character!!!
+    let lastIndex1 = string1.index(before: string1.endIndex)
+    let lastIndex2 = string2.index(before: string2.endIndex)
+
+    return string1[lastIndex1] == string2[lastIndex2]
+}
+
+print(hasSameLastCharacter("gonzaga", "zebra"))
+print(hasSameLastCharacter("spokane", "gonzaga"))
